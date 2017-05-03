@@ -37,6 +37,17 @@
   </div>
 </nav>
 
-    <%= yield %>
+<div class="container">
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: [:alert, alert_for(name)] %>
+  <% end %>
+
+  <%= yield %> 
+  
+  </div>
+
+
+
+   
   </body>
 </html>
